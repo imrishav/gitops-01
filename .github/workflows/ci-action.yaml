@@ -92,6 +92,8 @@ jobs:
         run: |
           echo ${{ github.sha }}
           sed -i "s#${{ github.actor }}.*#${{ github.actor }}/gitops-infra:${{ github.sha }}#g" deployment.yaml
+          git add -A
+          git commit -am "Update image for - ${{ github.sha }}"
           git config user.name "rishav sinha"
           git config user.email "rishav@live.co.uk"
       - run: echo ${{ github }}
