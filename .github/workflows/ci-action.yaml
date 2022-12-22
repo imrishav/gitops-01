@@ -74,7 +74,7 @@ jobs:
             imrishav/gitops01:latest 
             ghcr.io/imrishav/gitops01:latest
           # build on feature branches, push only on main branch
-          push: ${{ github.ref == 'refs/heads/main' }}
+          push: ${{ github.ref == 'refs/heads/master' }}
 
       - name: Image digest
         run: echo ${{ steps.docker_build.outputs.digest }}
